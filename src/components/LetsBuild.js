@@ -58,11 +58,11 @@ const styles = (theme) => ({
 	textBlue: {
 		[theme.breakpoints.down('sm')]: {
 			...theme.typography.mparagraph,
-			color: '#4198ff',
+			color: '#4198ff'
 		},
 		[theme.breakpoints.up('sm')]: {
 			...theme.typography.paragraph,
-			color: '#4198ff',
+			color: '#4198ff'
 		},
 		fontWeight: '900',
 		'&:hover': {
@@ -79,27 +79,17 @@ export default withStyles(styles)(({ classes }) => {
 			</Grid>
 			<Grid item xs={12} md={7}>
 				<Typography className={classes.title} gutterBottom={true}>
-					Let's build.
+					It takes IT talent to know IT talent.
 				</Typography>
 				<br />
 				<Typography className={classes.paragraph} gutterBottom={true}>
-					You've undertaken a project. Or You're creating a product. Congratulations! The future looks bright.
-					But your existing staff lacks competency in the required technology. Or maybe you lack the staff you
-					need, period.
-				</Typography>
-				<br />
-				<Typography className={classes.paragraph} gutterBottom={true}>
-					That's where Humanoko comes in.
-				</Typography>
-				<br />
-				<Typography className={classes.paragraph} gutterBottom={true}>
-					We're ready to put our expert software engineers to work for and with you, advising you on all the
-					architecture decisions, mapping out the pros and cons of different technologies, and getting your
-					project, or product, up and running.
+					Whether you need to build a solid technical group or fill a sudden technical vacancy, count on
+					Humanoko, a team of specialized, IT recruiters with 50+ years of combined IT experience.
+					<br />We know how to find top IT talent because we ARE top IT talent.
 				</Typography>
 				<br />
 				<a href="/" className={classes.textBlue}>
-					Learn more about our software development services.
+					[Could offer lead management here]
 				</a>
 			</Grid>
 		</Grid>

@@ -41,10 +41,10 @@ const styles = (theme) => ({
 	}
 });
 
-export default withStyles(styles)(({ classes, author, quote, authorRole }) => {
+export default withStyles(styles)(({ classes, author, quote, authorRole, size }) => {
 	return (
 		<Grid container justify="center" alignItems="center" className={classes.container}>
-			<Grid item xs={12} md={6} lg={6}>
+			<Grid item xs={12} md={size || 5} lg={size || 5}>
 				<Typography className={classes.quote}>
 					<span className={classes.quoteMultiline}>
 						{quote}
