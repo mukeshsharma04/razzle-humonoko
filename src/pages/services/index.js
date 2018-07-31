@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TabBar from '../../components/TabBar';
 import Banner from '../../components/Banner';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,7 +8,6 @@ import classNames from 'classnames';
 import Chip from '@material-ui/core/Chip';
 import Button from '../../components/Button';
 import Quotes from '../../components/Quotes';
-import { mobile, web, devOps, servicesFields } from '../../metadata';
 import Link, { withPrefix } from 'gatsby-link';
 
 const styles = (theme) => ({
@@ -52,29 +50,24 @@ const styles = (theme) => ({
 			...theme.typography.paragraph
 		}
 	},
+	row: {
+		paddingLeft: theme.spacing.unit * 5,
+		paddingRight: theme.spacing.unit * 5
+	},
+	divider: {
+		[theme.breakpoints.up('sm')]: {
+			borderRight: 'solid 1px #d1d1d1'
+		}
+	},
+	listItem: {
+		display: 'list-item'
+	},
 	space: {
 		marginTop: theme.spacing.unit * 4
 	},
-	divider: {
-		marginTop: theme.spacing.unit * 8,
-		marginBottom: theme.spacing.unit * 8,
-		backgroundColor: '#d1d1d1'
-	},
-	blueText: {
-		[theme.breakpoints.down('sm')]: {
-			...theme.typography.mparagraph
-		},
-		[theme.breakpoints.up('sm')]: {
-			...theme.typography.paragraph
-		},
-		color: '#4198ff'
-	},
-	chip: {
-		color: '#4198ff',
-		border: 'solid 2px #4198ff',
-		backgroundColor: 'white',
-		marginRight: theme.spacing.unit,
-		marginBottom: theme.spacing.unit
+	ul: {
+		listStyle: 'disc',
+		paddingLeft: '20px'
 	}
 });
 
@@ -83,125 +76,118 @@ export default withStyles(styles)(
 		render() {
 			const { classes } = this.props;
 
-			const text = (
-				<Typography className={classes.text} align="center">
-					Services
-				</Typography>
-			);
-
 			return (
 				<React.Fragment>
-					<TabBar fields={servicesFields} />
-					<Banner banner={withPrefix('/img/agency.jpg')} text={text} height="425px" />
+					<Banner banner={withPrefix('/img/agency.jpg')} height="499px" />
 					<Grid container className={classes.container} justify="space-between">
 						<Grid item xs={12} md={12}>
 							<Typography className={classes.title} gutterBottom={true}>
-								Custom software development for even the most persistent and seemingly impossible
-								difficulties.
+								Services
 							</Typography>
 							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								Software engineering is the fuel that makes your business growth and innovation
-								possible. But it can also be a roadblock, especially if your team isn’t familiar with
-								the technologies you need to move your project from idea to reality, and more so if your
-								team members don’t know what they don’t know.
+								With 40 million people in the industrialized world looking for work, filling your inbox
+								with applications is not a problem. The problem lies in quickly sifting through those
+								applications to find quality candidates who fit your criteria. That’s where Humanoko
+								comes in.
 							</Typography>
 							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								We at Humanoko DO know what others don’t. And our expert and elite engineers with various
-								specialties are standing by to act as the fuel that will make your project go.
-							</Typography>
-							<Divider className={classes.divider} />
-						</Grid>
-
-						<Grid item className={classes.space} xs={12} md={5}>
-							<Typography className={classes.title} gutterBottom={true}>
-								Mobile
+								Let us know which roles you need to hire for, and your hiring preferences, if any.
 							</Typography>
 							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								We use React Native and other mobile technologies to develop must-have mobile apps for
-								iOS and Android—including for Apple Watch and WearOS.
-							</Typography>
-							<Typography className={classNames(classes.blueText, classes.space)}>
-								Technology we’ve worked with:
-							</Typography>
-							<div className={classes.space}>
-								{mobile.map((v, k) => <Chip key={k} label={v} className={classes.chip} />)}
-							</div>
-							<Grid item xs={10} md={8}>
-								<Button text="See mobile services" to="/services/mobile" component={Link} />
-							</Grid>
-						</Grid>
-						<Grid className={classes.space} item xs={12} md={5}>
-							<Typography className={classes.title} gutterBottom={true}>
-								Web
+								For instance:
+								<ul className={classes.ul}>
+									<li>
+										Do you want a generalist, someone with an agency background or who may have held
+										various roles in startups or other companies?
+									</li>
+									<li>
+										Or do you need a specialist, someone who went beyond their foundational
+										knowledge and acquired expertise in certain IT disciplines?
+									</li>
+									<li>Are you in need of temporary help, or temp-to-hire?</li>
+								</ul>
 							</Typography>
 							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								Need web development and design? We have you covered, especially on the JavaScript
-								stack—NodeJS, React, Angular, AWS, and Firebase.
+								After we understand your requirements, define your ideal hire, and determine how quickly
+								you’d like to interview, we’ll start the process, handling the end-to-end offshore
+								recruitment process for you. Learn more about our process and how we work. [Link to how
+								we work page]
 							</Typography>
-							<Typography className={classNames(classes.blueText, classes.space)}>
-								Technology we’ve worked with:
-							</Typography>
-							<div className={classes.space}>
-								{web.map((v, k) => <Chip key={k} label={v} className={classes.chip} />)}
-							</div>
-							<Grid item xs={10} md={8}>
-								<Button text="See web services" to="/services/web" component={Link} />
-							</Grid>
-						</Grid>
-						<Grid className={classes.space} item xs={12} md={5}>
-							<Typography className={classes.title} gutterBottom={true}>
-								DevOps
-							</Typography>
-							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								Merge your delivery pipeline and customer feedback loop for development at high
-								velocity.
-							</Typography>
-							<Typography className={classNames(classes.blueText, classes.space)}>
-								Technology we’ve worked with:
-							</Typography>
-							<div className={classes.space}>
-								{devOps.map((v, k) => <Chip key={k} label={v} className={classes.chip} />)}
-							</div>
-							<Grid item xs={10} md={8}>
-								<Button text="See DevOps services" to="/services/devops" component={Link} />
-							</Grid>
-						</Grid>
-						<Grid className={classes.space} item xs={12} md={5}>
-							<Typography className={classes.title} gutterBottom={true}>
-								Salesforce
-							</Typography>
-							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								Merge your delivery pipeline and customer feedback loop for development at high
-								velocity.
-							</Typography>
-							<Typography className={classNames(classes.blueText, classes.space)}>
-								Technology we’ve worked with:
-							</Typography>
-							<div className={classes.space}>
-								<Chip label="Salesforce commerce" className={classes.chip} />
-							</div>
-							<Grid item xs={10} md={8}>
-								<Button text="See Salesforce services" to="/services/salesforce" component={Link} />
-							</Grid>
 						</Grid>
 					</Grid>
 					<Banner banner={withPrefix('/img/code.jpg')} height="322px" />
 					<Grid container className={classes.container} justify="space-between">
 						<Grid item xs={12} md={12}>
 							<Typography className={classes.title} gutterBottom={true}>
-								Pricing
+								We specialize in IT requirement
 							</Typography>
-							<Typography className={classNames(classes.paragraph, classes.space)} gutterBottom={true}>
-								“How much does it cost?” That’s the big question we’re asked most often. And although we
-								can’t say for certainty without exploring the scope and nature of your project, we can
-								give you an idea.
-							</Typography>
+							<Grid container className={classes.container}>
+								<Grid className={classNames(classes.row, classes.divider)} item xs={12} md={4}>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										IT security
+									</Typography>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										Network administrator
+									</Typography>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										DevOps
+									</Typography>
+								</Grid>
+								<Grid className={classNames(classes.row, classes.divider)} item xs={12} md={4}>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										IT operations
+									</Typography>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										IT infrastructure
+									</Typography>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										Systems engineer
+									</Typography>
+								</Grid>
+								<Grid className={classNames(classes.row)} item xs={12} md={4}>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										Web and app development
+									</Typography>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										Big Data
+									</Typography>
+									<Typography
+										className={classNames(classes.paragraph, classes.listItem)}
+										gutterBottom={true}
+									>
+										Emerging technology
+									</Typography>
+								</Grid>
+							</Grid>
 						</Grid>
 					</Grid>
 					<Quotes
-						quote="The best way to get a project done faster is to start sooner [like now]."
-						author="Jim Highsmith,"
-						authorRole="with our parenthetical and emphasis"
+						quote="The secret to successful hiring is this: look for people who wand to change the world."
+						author="Marc Benioff"
 					/>
 				</React.Fragment>
 			);

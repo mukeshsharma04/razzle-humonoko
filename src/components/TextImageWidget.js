@@ -39,17 +39,6 @@ const styles = (theme) => ({
 			...theme.typography.title
 		}
 	},
-	subTitle: {
-		[theme.breakpoints.down('sm')]: {
-			...theme.typography.mtitle
-		},
-		[theme.breakpoints.up('sm')]: {
-			...theme.typography.title
-		},
-		width: 'fit-content',
-		borderBottom: '6px solid #4198ff',
-		paddingBottom: '8px'
-	},
 	paragraph: {
 		[theme.breakpoints.down('sm')]: {
 			...theme.typography.mparagraph
@@ -75,28 +64,29 @@ export default withStyles(styles)(({ classes }) => {
 		<Grid container justify="space-between" className={classes.container}>
 			<Grid item xs={12} md={7}>
 				<Typography className={classes.title} gutterBottom={true}>
-					A software engineering firm with only software engineers. Imagine that.
+					We’re IT recruitment specialists, 50 years young.
 				</Typography>
-				<br />
-				<Typography className={classes.subTitle}>Our people are good.</Typography>
+				<Typography className={classes.title} gutterBottom={true}>
+					And we’ll help you get the right IT people in the right seats, fast.
+				</Typography>
 				<div>
 					<br />
 					<Typography className={classes.paragraph} gutterBottom={true}>
-						Humanoko is a software engineering firm whose founders bring 50+ years of software engineering
-						experience to the table to tackle your most challenging engineering projects
+						Humanoko is a startup recruitment process outsourcing (RPO) firm with one goal in mind: to help
+						you get the right technical people in the right seats in the shortest time possible.
 					</Typography>
 					<br />
 					<Typography className={classes.paragraph} gutterBottom={true}>
-						Give us a bull; we’ll bring our cape.
+						Combined, our founders bring 50+ years of IT experience to the recruiting process, which allows
+						us to quickly hone in on the technical talent that matches your criteria.
 					</Typography>
 					<br />
 					<Typography className={classes.paragraph} gutterBottom={true}>
-						Give us a runaway train; we’ll bring our catch engine.
+						Curious? Read more about our RPO services, process, and differentiation. [Link to proper pages]
 					</Typography>
 					<br />
 					<Typography className={classes.paragraph} gutterBottom={true}>
-						Give us your most difficult engineering obstacle; we’ll bring an engineering expert with the
-						skills and tools to face it.
+						And, when you’re ready, email us or give us a call.
 					</Typography>
 				</div>
 			</Grid>

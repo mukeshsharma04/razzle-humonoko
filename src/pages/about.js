@@ -1,12 +1,7 @@
 import React from 'react';
-import Banner from '../components/Banner';
 import TextImageWidget from '../components/TextImageWidget';
-import Team from '../components/Team';
-import JoinTeam from '../components/JoinTeam';
-import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import Quote from '../components/Quotes';
-import { withPrefix } from 'gatsby-link';
 
 const styles = (theme) => ({
 	divider: {
@@ -19,13 +14,10 @@ const About = ({ classes }) => {
 	return (
 		<div>
 			<TextImageWidget />
-			<Banner banner={withPrefix('/img/typing.png')} height="348px" />
-			<Team />
-			<Divider className={classes.divider} />
-			<JoinTeam />
 			<Quote
-				author="Martin Fowler"
-				quote="Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+				author="Jim Collins,"
+				authorRole="Author of Good to Great"
+				quote="Companies that go from good to great start not with “where” but with “who.” They start by getting the right people on the bus, the wrong people off the bus, and the right people in the right seats."
 			/>
 		</div>
 	);
