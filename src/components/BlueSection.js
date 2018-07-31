@@ -15,7 +15,7 @@ const styles = (theme) => ({
 		[theme.breakpoints.up('lg')]: {
 			padding: theme.spacing.unit * 10
 		},
-		background: 'linear-gradient(112deg, #4198ff, #6f73ff)',
+		backgroundColor: '#4198ff',
 		overflow: 'hidden'
 	},
 	image: {

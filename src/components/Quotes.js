@@ -11,8 +11,8 @@ const styles = (theme) => ({
 	},
 	quote: {
 		...theme.typography.quote,
-		color: '#6f73ff',
-		borderLeft: '7px solid #6f73ff',
+		color: '#4198ff',
+		borderLeft: '7px solid #4198ff',
 		margin: '25px auto',
 		padding: '7px 0',
 		maxWidth: '90%'
@@ -33,7 +33,7 @@ const styles = (theme) => ({
 	},
 	author: {
 		...theme.typography.quote,
-		color: '#6f73ff',
+		color: '#4198ff',
 		textAlign: 'right'
 	},
 	emdash: {

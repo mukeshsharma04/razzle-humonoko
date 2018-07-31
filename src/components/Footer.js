@@ -119,8 +119,10 @@ const Footer = ({ classes }) => {
 		<div className={classes.root}>
 			<Grid className={classes.row} container>
 				<Grid item xs={6} md={6}>
-					<Link to="/">
-						<img className={classes.logo} src={withPrefix('/img/humanoko-logo-white.png')} alt="humanoko" />
+					<Link className={classes.link} to="/">
+						<Typography variant="subheading" className={classes.client} color="inherit" gutterBottom={true}>
+							HUMANOKO
+						</Typography>
 					</Link>
 				</Grid>
 				<Grid item xs={6} md={6} className={classes.right}>

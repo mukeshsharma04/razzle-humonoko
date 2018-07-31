@@ -50,7 +50,7 @@ const styles = (theme) => ({
 			...theme.typography.title
 		},
 		width: 'fit-content',
-		borderBottom: '6px solid #6f73ff',
+		borderBottom: '6px solid #4198ff',
 		paddingBottom: '8px'
 	},
 	outerBox: {

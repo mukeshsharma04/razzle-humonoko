@@ -18,7 +18,7 @@ const styles = (theme) => ({
 		},
 		width: 'fit-content',
 		color: 'white',
-		background: `linear-gradient(101deg, #4198ff, #6f73ff)`,
+		backgroundColor: '#4198ff',
 		padding: '10px'
 	}
 });

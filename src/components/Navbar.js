@@ -84,6 +84,14 @@ const styles = (theme) => ({
 	},
 	space: {
 		marginTop: '4%'
+	},
+	heading: {
+		fontSize: '15px',
+		fontWeight: '600',
+		color: '#ffffff',
+		'&:hover': {
+			color: '#ffffff'
+		}
 	}
 });
 
@@ -102,15 +110,11 @@ class NavBar extends React.Component {
 
 		return (
 			<div className={classes.root}>
-				<AppBar position="static" style={{ background: 'linear-gradient(to right, #4B96FC, #6F77FB)' }}>
+				<AppBar position="static" style={{ backgroundColor: '#4198ff' }}>
 					<Toolbar varient="dense">
-						<Typography variant="title" color="inherit" className={classes.flex}>
-							<Link to="/">
-								<img
-									src={withPrefix('/img/humanoko-logo-white.png')}
-									alt="Humanoko"
-									style={{ height: '20px' }}
-								/>
+						<Typography variant="subheading" color="inherit" className={classes.flex}>
+							<Link className={classes.heading} to="/">
+								Humanoko
 							</Link>
 						</Typography>
 						<Hidden smDown implementation="css">
@@ -127,25 +131,25 @@ class NavBar extends React.Component {
 								Services
 							</Link>
 							<Link
-								to="/results"
-								className={classNames(classes.navLink, this.activeLink('/results') && classes.active)}
+								to="/how-we-work"
+								className={classNames(classes.navLink, this.activeLink('/how-we-work') && classes.active)}
 							>
-								Results
+								How we work
 							</Link>
 							<Link
-								to="/the-humanoko-difference"
+								to="/why-us"
 								className={classNames(
 									classes.navLink,
-									this.activeLink('/the-humanoko-difference') && classes.active
+									this.activeLink('/why-us') && classes.active
 								)}
 							>
-								The Humanoko Difference
+								Why us?
 							</Link>
 							<Link
-								to="/letstalk"
-								className={classNames(classes.navLink, this.activeLink('/letstalk') && classes.active)}
+								to="/clients"
+								className={classNames(classes.navLink, this.activeLink('/clients') && classes.active)}
 							>
-								Let's Talk
+								Clients
 							</Link>
 						</Hidden>
 						<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">

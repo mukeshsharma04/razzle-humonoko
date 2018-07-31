@@ -33,7 +33,7 @@ const styles = (theme) => ({
 		},
 		width: 'fit-content',
 		color: 'white',
-		background: `linear-gradient(101deg, #4198ff, #6f73ff)`,
+		backgroundColor: '#4198ff',
 		padding: '10px'
 	},
 	title: {
@@ -67,11 +67,11 @@ const styles = (theme) => ({
 		[theme.breakpoints.up('sm')]: {
 			...theme.typography.paragraph
 		},
-		color: '#6f73ff'
+		color: '#4198ff'
 	},
 	chip: {
-		color: '#6f73ff',
-		border: 'solid 2px #6f73ff',
+		color: '#4198ff',
+		border: 'solid 2px #4198ff',
 		backgroundColor: 'white',
 		marginRight: theme.spacing.unit,
 		marginBottom: theme.spacing.unit
