@@ -3,12 +3,9 @@ import Banner from '../../components/Banner';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
 import classNames from 'classnames';
-import Chip from '@material-ui/core/Chip';
-import Button from '../../components/Button';
 import Quotes from '../../components/Quotes';
-import Link, { withPrefix } from 'gatsby-link';
+import { withPrefix } from 'gatsby-link';
 
 const styles = (theme) => ({
 	container: {
