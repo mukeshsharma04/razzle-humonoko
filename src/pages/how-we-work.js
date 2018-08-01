@@ -54,42 +54,6 @@ const styles = (theme) => ({
 	leftPadding: {
 		paddingRight: '15px'
 	},
-	step: {
-		position: 'relative',
-		minHeight: '32px '
-	},
-	outerCircle: {
-		border: '1px solid #4198ff',
-		padding: '1px',
-		borderRadius: '20px',
-		position: 'absolute'
-	},
-	step___div_first_child: {
-		position: 'static',
-		height: '0'
-	},
-	step___div_last_child: {
-		marginLeft: '32px',
-		paddingLeft: '16px',
-		minHeight: '100px'
-	},
-	circle: {
-		background: '#4198ff',
-		width: '32px',
-		height: '32px',
-		lineHeight: '32px',
-		borderRadius: '16px',
-		position: 'relative',
-		color: 'white',
-		textAlign: 'center'
-	},
-	line: {
-		position: 'absolute',
-		borderLeft: '1px solid gainsboro',
-		left: '18px',
-		bottom: '10px',
-		top: '42px'
-	},
 	small: {
 		width: '15px',
 		height: '15px'
@@ -103,6 +67,22 @@ const styles = (theme) => ({
 		position: 'absolute',
 		top: '70%',
 		left: '0%'
+	},
+	mobileFirst: {
+		position: 'absolute',
+		top: '40%'
+	},
+	mobileSecond: {
+		position: 'absolute',
+		top: '50%'
+	},
+	mdivider: {
+		minHeight: '170px',
+		borderLeft: '2px solid #d1d1d1',
+		marginLeft: '22px'
+	},
+	parent: {
+		position: 'relative'
 	}
 });
 
@@ -250,61 +230,111 @@ class About extends React.Component {
 					</Grid>
 				</Hidden>
 				<Hidden mdUp>
-					<div className={classes.step}>
-						<div className={classes.step___div_first_child}>
-							<div className={classes.outerCircle}>
-								<div className={classes.circle}>1</div>
-							</div>
-							<div className={classes.line} />
-						</div>
-						<div className={classes.step___div_last_child}>
-							<Typography className={classes.paragraph}>
+					<Grid container className={classes.parent}>
+						<Grid item xs={2}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>1</Avatar>
+									</div>
+									<div className={classes.mdivider} />
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item xs={9}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
 								Qualify candidates based on education, experience, and skill through initial PHONE
 								SCREENINGS.
 							</Typography>
-						</div>
-					</div>
-					<div className={classes.step}>
-						<div className={classes.step___div_first_child}>
-							<div className={classes.outerCircle}>
-								<div className={classes.circle}>2</div>
-							</div>
-							<div className={classes.line} />
-						</div>
-						<div className={classes.step___div_last_child}>
-							<Typography className={classes.paragraph}>
+						</Grid>
+						<Grid container className={classes.mobileFirst}>
+							<Grid item xs={2}>
+								<Grid container justify="center" alignItems="center">
+									<Grid item>
+										<div className={classNames(classes.outer)}>
+											<Avatar className={classNames(classes.avatar, classes.small)} />
+										</div>
+									</Grid>
+								</Grid>
+							</Grid>
+							<Grid item xs={9}>
+								<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+									Look beyond academics for the right blend of fundamentals, work experience,
+									self-direction, motivation, and the skills you need.
+								</Typography>
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid container className={classes.parent}>
+						<Grid item xs={2}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>2</Avatar>
+									</div>
+									<div className={classes.mdivider} />
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item xs={9}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
 								Validate inital impressions and discuss the needs of your role, with a TECHNICAL
 								INTERVIEW
 							</Typography>
-						</div>
-					</div>
-					<div className={classes.step}>
-						<div className={classes.step___div_first_child}>
-							<div className={classes.outerCircle}>
-								<div className={classes.circle}>3</div>
-							</div>
-							<div className={classes.line} />
-						</div>
-						<div className={classes.step___div_last_child}>
-							<Typography className={classes.paragraph}>
+						</Grid>
+						<Grid container className={classes.mobileSecond}>
+							<Grid item xs={2}>
+								<Grid container justify="center" alignItems="center">
+									<Grid item>
+										<div className={classNames(classes.outer)}>
+											<Avatar className={classNames(classes.avatar, classes.small)} />
+										</div>
+									</Grid>
+								</Grid>
+							</Grid>
+							<Grid item xs={9}>
+								<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+									Lean on our 50+ years of IT expertise to pinpoint individuals with the right skills
+									and abilities.
+								</Typography>
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid container>
+						<Grid item xs={2}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>3</Avatar>
+									</div>
+									<div className={classes.mdivider} />
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item xs={9}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
 								Understand a candidates work ethic, motivation level, and ability to collaborate with
 								thorough REFERENCE CHECKS.
 							</Typography>
-						</div>
-					</div>
-					<div className={classes.step}>
-						<div className={classes.step___div_first_child}>
-							<div className={classes.outerCircle}>
-								<div className={classes.circle}>4</div>
-							</div>
-						</div>
-						<div className={classes.step___div_last_child}>
-							<Typography className={classes.paragraph}>
+						</Grid>
+					</Grid>
+					<Grid container>
+						<Grid item xs={2}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>4</Avatar>
+									</div>
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item xs={9}>
+							<Typography className={classNames(classes.paragraph)}>
 								SUBMIT qualified, verified candidates to you so you can confirm fit and schedule your
 								interviews.
 							</Typography>
-						</div>
-					</div>
+						</Grid>
+					</Grid>
 				</Hidden>
 			</div>
 		);
