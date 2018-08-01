@@ -4,6 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
+import Hidden from '@material-ui/core/Hidden';
 
 const styles = (theme) => ({
 	container: {
@@ -43,29 +44,71 @@ const styles = (theme) => ({
 		boxShadow: '0px 0px 2px #4198ff'
 	},
 	divider: {
-		height: '100px',
+		minHeight: '100px',
 		borderLeft: '2px solid #d1d1d1',
 		marginLeft: '22px'
 	},
 	space: {
 		marginBottom: theme.spacing.unit * 5
 	},
-	leftSide: {
-		paddingTop: '11%'
-  },
-  rightSide: {
-    display: '-webkit-box'
-  }
+	leftPadding: {
+		paddingRight: '15px'
+	},
+	step: {
+		position: 'relative',
+		minHeight: '32px '
+	},
+	outerCircle: {
+		border: '1px solid #4198ff',
+		padding: '1px',
+		borderRadius: '20px',
+		position: 'absolute'
+	},
+	step___div_first_child: {
+		position: 'static',
+		height: '0'
+	},
+	step___div_last_child: {
+		marginLeft: '32px',
+		paddingLeft: '16px',
+		minHeight: '100px'
+	},
+	circle: {
+		background: '#4198ff',
+		width: '32px',
+		height: '32px',
+		lineHeight: '32px',
+		borderRadius: '16px',
+		position: 'relative',
+		color: 'white',
+		textAlign: 'center'
+	},
+	line: {
+		position: 'absolute',
+		borderLeft: '1px solid gainsboro',
+		left: '18px',
+		bottom: '10px',
+		top: '42px'
+	},
+	small: {
+		width: '15px',
+		height: '15px'
+	},
+	absoluteFirst: {
+		position: 'absolute',
+		top: '50%',
+		left: '0%'
+	},
+	absoluteSecond: {
+		position: 'absolute',
+		top: '70%',
+		left: '0%'
+	}
 });
-
-function getSteps() {
-	return [ 'Select campaign settings', 'Create an ad group', 'Create an ad' ];
-}
 
 class About extends React.Component {
 	render() {
 		const { classes } = this.props;
-		const steps = getSteps();
 		return (
 			<div className={classes.container}>
 				<Typography className={classes.title} gutterBottom={true}>
@@ -77,59 +120,192 @@ class About extends React.Component {
 					commitment to always keeping you in the loop. You’ll never wonder where we are in the process.
 				</Typography>
 				<br />
-				<Grid container direction="row" justify="center">
-					<Grid item md={3}>
-						<Grid container direction="column" justify="flex-end">
-							<Grid item>
-								<Typography className={classNames(classes.paragraph)}>
-									Qualify candidates based on education, experience, and skill through initial PHONE
-									SCREENINGS.
-								</Typography>
-								<br />
-								<Typography className={classNames(classes.paragraph, classes.leftSide)}>
-									Validate inital impressions and discuss the needs of your role, with a TECHNICAL
-									INTERVIEW
-								</Typography>
-								<br />
-								<Typography className={classNames(classes.paragraph, classes.leftSide)}>
-									Understand a candidates work ethic, motivation level, and ability to collaborate
-									with thorough REFERENCE CHECKS.
-								</Typography>
+				<Hidden smDown>
+					<Grid container justify="center">
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								Qualify candidates based on education, experience, and skill through initial PHONE
+								SCREENINGS.
+							</Typography>
+						</Grid>
+						<Grid item md={1}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>1</Avatar>
+									</div>
+									<div className={classes.divider} />
+								</Grid>
 							</Grid>
 						</Grid>
-					</Grid>
-					<Grid item md={2}>
-						<Grid container justify="center" alignItems="center">
-							<Grid item>
-								<div className={classes.outer}>
-									<Avatar className={classes.avatar}>1</Avatar>
-								</div>
-								<div className={classes.divider} />
-								<div className={classes.outer}>
-									<Avatar className={classes.avatar}>2</Avatar>
-								</div>
-								<div className={classes.divider} />
-								<div className={classes.outer}>
-									<Avatar className={classes.avatar}>3</Avatar>
-								</div>
-								<div className={classes.divider} />
-								<div className={classes.outer}>
-									<Avatar className={classes.avatar}>4</Avatar>
-								</div>
-							</Grid>
+						<Grid item md={4}>
+							&#160;
 						</Grid>
 					</Grid>
-					<Grid item md={3} className={classes.rightSide}>
-						<Grid container alignItems="flex-end">
-							<Grid item>
-								<Typography className={classNames(classes.paragraph)}>
-									SUBMIT qualified, verified candidates to you so you can confirm fit and schedule
-									your interviews.
-								</Typography>
+					<Grid container className={classes.absoluteFirst} justify="center">
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								&#160;
+							</Typography>
+						</Grid>
+						<Grid item md={1}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classNames(classes.outer)}>
+										<Avatar className={classNames(classes.avatar, classes.small)} />
+									</div>
+								</Grid>
 							</Grid>
 						</Grid>
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								Look beyond academics for the right blend of fundamentals, work experience,
+								self-direction, motivation, and the skills you need.
+							</Typography>
+						</Grid>
 					</Grid>
-				</Grid>
+					<Grid container justify="center">
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								Validate inital impressions and discuss the needs of your role, with a TECHNICAL
+								INTERVIEW
+							</Typography>
+						</Grid>
+						<Grid item md={1}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>2</Avatar>
+									</div>
+									<div className={classes.divider} />
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item md={4}>
+							&#160;
+						</Grid>
+					</Grid>
+					<Grid container className={classes.absoluteSecond} justify="center">
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								&#160;
+							</Typography>
+						</Grid>
+						<Grid item md={1}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classNames(classes.outer)}>
+										<Avatar className={classNames(classes.avatar, classes.small)} />
+									</div>
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								Lean on our 50+ years of IT expertise to pinpoint individuals with the right skills and
+								abilities.
+							</Typography>
+						</Grid>
+					</Grid>
+					<Grid container justify="center">
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph, classes.leftPadding)}>
+								Understand a candidates work ethic, motivation level, and ability to collaborate with
+								thorough REFERENCE CHECKS.
+							</Typography>
+						</Grid>
+						<Grid item md={1}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>3</Avatar>
+									</div>
+									<div className={classes.divider} />
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item md={4}>
+							&#160;
+						</Grid>
+					</Grid>
+					<Grid container justify="center">
+						<Grid item md={4}>
+							&#160;
+						</Grid>
+						<Grid item md={1}>
+							<Grid container justify="center" alignItems="center">
+								<Grid item>
+									<div className={classes.outer}>
+										<Avatar className={classes.avatar}>4</Avatar>
+									</div>
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item md={4}>
+							<Typography className={classNames(classes.paragraph)}>
+								SUBMIT qualified, verified candidates to you so you can confirm fit and schedule your
+								interviews.
+							</Typography>
+						</Grid>
+					</Grid>
+				</Hidden>
+				<Hidden mdUp>
+					<div className={classes.step}>
+						<div className={classes.step___div_first_child}>
+							<div className={classes.outerCircle}>
+								<div className={classes.circle}>1</div>
+							</div>
+							<div className={classes.line} />
+						</div>
+						<div className={classes.step___div_last_child}>
+							<Typography className={classes.paragraph}>
+								Qualify candidates based on education, experience, and skill through initial PHONE
+								SCREENINGS.
+							</Typography>
+						</div>
+					</div>
+					<div className={classes.step}>
+						<div className={classes.step___div_first_child}>
+							<div className={classes.outerCircle}>
+								<div className={classes.circle}>2</div>
+							</div>
+							<div className={classes.line} />
+						</div>
+						<div className={classes.step___div_last_child}>
+							<Typography className={classes.paragraph}>
+								Validate inital impressions and discuss the needs of your role, with a TECHNICAL
+								INTERVIEW
+							</Typography>
+						</div>
+					</div>
+					<div className={classes.step}>
+						<div className={classes.step___div_first_child}>
+							<div className={classes.outerCircle}>
+								<div className={classes.circle}>3</div>
+							</div>
+							<div className={classes.line} />
+						</div>
+						<div className={classes.step___div_last_child}>
+							<Typography className={classes.paragraph}>
+								Understand a candidates work ethic, motivation level, and ability to collaborate with
+								thorough REFERENCE CHECKS.
+							</Typography>
+						</div>
+					</div>
+					<div className={classes.step}>
+						<div className={classes.step___div_first_child}>
+							<div className={classes.outerCircle}>
+								<div className={classes.circle}>4</div>
+							</div>
+						</div>
+						<div className={classes.step___div_last_child}>
+							<Typography className={classes.paragraph}>
+								SUBMIT qualified, verified candidates to you so you can confirm fit and schedule your
+								interviews.
+							</Typography>
+						</div>
+					</div>
+				</Hidden>
 			</div>
 		);
 	}
